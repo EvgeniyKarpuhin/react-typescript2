@@ -13,16 +13,21 @@ const App: React.FC = () => {
       completed: false
     }
     setTodos(prev => [newTodo, ...prev])
-    
   }
-  return <>
+
+const toggleHandler = (id: number) => {}
+
+const removeHandler = (id: number) => {}
+
+  return (
+  <>
   <Navbar />
   <div className='container'>
     <TodoForm onAdd={addHandler} />
-    <TodoList todos={todos}/>
+    <TodoList todos={todos} onToggle={toggleHandler} onRemove={removeHandler} />
   </div>
     </>
-  
+  )
 }
 
 export default App;

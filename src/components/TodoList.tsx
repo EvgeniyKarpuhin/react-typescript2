@@ -3,9 +3,11 @@ import { ITodo } from '../interfaces'
 
 type TodoListProps = {
     todos: ITodo[]
+    onToggle(id: number): void
+    onRemove(id: number): void
 }
 
-export const TodoList: React.FC<TodoListProps> = ({ todos }) => {
+export const TodoList: React.FC<TodoListProps> = ({ todos, onRemove, onToggle }) => {
     return (
         <ul>
             {todos.map(todo => {
